@@ -1,0 +1,10 @@
+{
+    "manifest_version": 2,
+    "name": "Groupme Chat Hiding",
+    "version": "1.0",
+    "description": "Hides unwanted chat(s) from my groupme web view.",
+    "content_scripts": [ {
+        "matches": ["https://app.groupme.com/*"],
+        "js": ["content.js"]
+    } ]
+}
