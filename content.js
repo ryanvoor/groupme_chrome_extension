@@ -10,6 +10,18 @@ var checkUnwantedChatsExist = setInterval(
             }
         }
     },
-    100 // check every 100 ms to see if the chats exist on the page yet
+    100 // check every 100 ms to see if the chats list exists on the page yet
 );
 
+var checkChatsElementExists = setInterval(
+    function() {
+        if ( typeof document.getElementById( 'chats' ) !== 'undefined' ) {
+            if ( document.getElementsByTagName( 'body' )[0].clientHeight > 1200 ) {
+                document.getElementById( 'chats' ).style.paddingBottom = '500px';
+                console.log( 'Putting extra space under the chat content so it strains my neck less' );
+                clearInterval( checkChatsElementExists );
+            }
+        }
+    },
+    100 // check every 100 ms to see if the chats wrapper div exists on the page yet
+);
